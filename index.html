@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notion - Landing Page</title>
+    <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background-color: rgb(203, 203, 202);
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #37352f;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .title:hover{
+      scale: 1.1;
+      transition: 0.5s;
+    }
+    nav {
+        background-color: rgb(184, 180, 180);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px 30px;
+        flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 35px;
+    }
+    .home {
+      display: flex;
+      gap: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 20px;
+    }
+    a:hover {
+        color: #888282;
+        transition: 0.3s;
+        scale: 1.1;
+    }
+
+    .btn{
+        color: #ffffff;
+        background-color: #434341;
+        border-radius: 5px;
+        padding: 1px 8px;
+        font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 40px auto;
+    }
+
+    .card {
+        background: #747070;
+        padding: 25px 20px;
+        border-radius: 10px;
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        flex: 1 1 300px;
+        color: rgb(223, 220, 217);
+    }
+    .card:hover {
+        scale: 1.05;
+        transition: 0.25s;
+    }
+    .card-icon {
+        font-size: 40px;
+        margin-bottom: 8px;
+    }
+    .card h3 {
+        margin-bottom: 4px;
+    }
+
+    .temp1 {
+        transition: transform 0.3s ease;
+        box-shadow: 0.3s ease;
+        border-radius: 10px;
+        }
+    .temp1:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+    }
+    .temp2 {
+        transition: transform 0.3s ease;
+        box-shadow: 0.3s ease;
+        border-radius: 10px;
+        }
+    .temp2:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+    }
+    .temp3 {
+        transition: transform 0.3s ease;
+        box-shadow: 0.3s ease;
+        border-radius: 10px;
+        }
+    .temp3:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .num {
+        display: grid;
+        grid-template-columns: 45px 240px 1fr;
+        align-items: center;
+        gap: 18px;
+        padding: 18px 20px;
+        border-radius: 12px;
+        background: #f1eeee;
+        width: 100%;
+        min-width: 0;
+    }
+    .num h2 {
+        background-color: #3a3a3a;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        min-width: 36px;
+        height: 42px;
+        margin: 0;
+        width: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .num p {
+        margin: 0;
+        line-height: 1.5;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+    .num h3 {
+        margin: 0;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: #777575;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 14px 15px;
+        border-radius: 15px;
+        margin-top: 20px;
+        border: none;
+        cursor: pointer;
+    }
+    .review-card {
+        background: #857e7e1b;
+        padding: 25px 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 2px;
+        min-width: 0;
+        flex: 1 1 300px;
+    }
+    .review-card p {
+        font-style: italic;
+        margin-bottom: 12px;
+    }
+
+    .reviews .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 30px;
+    }
+
+    .review-card {
+        height: 100%;
+        padding: 25px;
+        border-radius: 14px;
+        background: #f1eeee;
+    }
+
+    .price-card {
+        background: #ada4a49a;
+        padding: 30px 20px;
+        border-radius: 10px;
+        flex: 1 1 300px;
+        min-width: 0;
+        text-align: center;
+    }
+    .price-card h3 {
+        margin-bottom: 10px;
+    }
+    .price-amount {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .price-card ul {
+        list-style: none;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .price-card li {
+          padding: 5px;
+    }
+    .price-card.featured {
+        background-color: #646363;
+        color: #ffffff;
+    }
+
+    .about {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .about img {
+        display: block;
+        width: 100% !important;
+        max-width: 600px;
+        height: auto !important;
+        margin: 20px auto;
+    }
+
+    .num {
+      align-items: flex-start;
+    }
+    .num h3 {
+      margin-top: 6px;
+    }
+    .num p {
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #262626;
+      color: #ffffff;
+      padding: 35px 20px;
+      text-align: center;
+    }
+    footer p {
+      margin: 8px 0;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 15px 0;
+    }
+    .footer-links a {
+      font-size: 16px;
+      color: #ffffff;
+    }
+    .footer-links a:hover {
+      color: #c7c7c7;
+    }
+
+
+    @media (max-width: 768px) {
+        nav {
+          padding: 16px 20px;
+        }
+        .title {
+          width: 100%;
+          justify-content: center;
+        }
+        .home {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 10px 16px;
+          margin-top: 14px;
+        }
+        .home a {
+          font-size: 16px;
+        }
+        .container {
+          padding: 0 16px;
+        }
+        .about,
+        .features,
+        .benefits,
+        .reviews,
+        .pricing {
+          padding: 45px 0;
+        }
+        .grid {
+          flex-direction: column;
+        }
+        .card,
+        .price-card,
+        .review-card {
+          width: 100%;
+        }
+        .num {
+            display: grid;
+            grid-template-columns: 42px minmax(0, 1fr);
+            column-gap: 12px;
+            row-gap: 0;
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .num h2{
+            grid-row: span 2;
+            width: 42px;
+            height: 42px;
+            margin: 0;
+        }
+        .num p {
+            grid-column: 2;
+            width: auto;
+            min-width: 0;
+            margin: 2px 0 0;
+            line-height: 1.4;
+            overflow-wrap: break-word;
+        }
+        .num h3{
+            font-size: 18px;
+            margin: 0;
+            min-width: 0;
+        }
+        .cta-button {
+          font-size: 16px;
+          padding: 12px 16px;
+        }
+        .reviews .grid {
+          grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+      }
+      .title img {
+        height: 42px !important;
+        width: 42px !important;
+      }
+      .about h2,
+      .features h2,
+      .benefits h2,
+      .reviews h2,
+      .pricing h2 {
+        font-size: 30px;
+      }
+    }
+    </style>
+  </head>
+
+
+  <body>
+    <header>
+      <nav>
+        <div class="title">
+          <img
+            src="notionlogo.png"
+            alt="logo"
+            style="height: 50px; width: 50px; border-radius: 15px"
+          />
+
+          <h1>Notion</h1>
+        </div>
+
+        <div class="home">
+          <a href="#about">about</a>
+          <a href="#features">features</a>
+          <a href="#benefits">benefits</a>
+          <a href="#reviews">reviews</a>
+          <a href="#pricing">pricing</a>
+          <a href="#pricing" class="btn">Get Started</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="about" id="about">
+        <div class="container">
+          <h2>
+            Notion Workspace ~ All-in-One Productivity Dashboard for Students,
+            Creators & Small Business
+          </h2>
+
+          <p>
+            Write, plan, and organize in one place. Notion brings notes, docs,
+            tasks, and AI together so your team can think and work faster.
+          </p>
+
+            <img class="temp1" src="template1.png" alt="Notion Image 1" 
+            style="height: 300px; width: 600px;"/>
+
+            <img class="temp2" src="template2.png" alt="Notion Image 2" style="height: 300px; width: 600px"/>
+            <img class="temp3" src="template3.png" alt="Notion Image 3" style="height: 300px; width: 600px"/>
+          
+
+          <a href="#about" class="cta-button">Get the Template →</a>
+        </div>
+      </div>
+
+      <div class="features" id="features">
+        <div class="container">
+          <h2>Everything you need in one place!</h2>
+
+          <p>
+            Notes, docs, tasks, wikis, and powerful AI - all connected so you
+            never lose context.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <div class="card-icon">📅</div>
+
+              <h3>Daily Task & Goal Tracking</h3>
+              <p>
+                Keep track of your daily tasks and stay focused on your goals.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">🤖</div>
+
+              <h3>Notion AI</h3>
+              <p>
+                Ask questions and generate content with the power of Notion AI.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">💬</div>
+
+              <h3>Real-Time Collaboration</h3>
+              <p>
+                Interact, modify, and collaborate with your team in real-time.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">🔗</div>
+
+              <h3>Integrations</h3>
+              <p>
+                Connect Google Drive, Figma, GitHub and 50+ other tools you
+                already use.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits" id="benefits">
+        <div class="container">
+          <h2>Why Notion ?</h2>
+          <p>simplifies your workflow</p>
+
+          <div class="grid">
+            <div class="num">
+              <h2>1</h2>
+              <h3>All-in-One Workspace</h3>
+              <p>
+                Consolidate your notes, docs, tasks, and databases into a
+                single, cohesive system.
+              </p>
+            </div>
+
+            <div class="num">
+              <h2>2</h2>
+              <h3>AI that actually helps</h3>
+              <p>
+                Notion AI understands your workspace, so answers come with
+                citations from your own docs.
+              </p>
+            </div>
+
+            <div class="num">
+              <h2>3</h2>
+              <h3>flexible for any team</h3>
+              <p>From personal to-do lists to company-wide knowledge bases</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews" id="reviews">
+        <div class="container">
+          <h2>Loved by users around the world!</h2>
+          <p>see what people are saying about Notion</p>
+
+          <div class="grid">
+            <div class="review-card">
+              <p>
+                "Notion's thoughtful design speeds up collaboration and
+                decisions so we can deliver impact to our customers faster."
+              </p>
+
+              <div class="num"><h2 style="font-size: 15px">MV</h2></div>
+
+              <div class="review-id">
+                <h4>Max Volkov</h4>
+                Director of Product Design
+              </div>
+            </div>
+
+            <div class="review-card">
+              <p>
+                "Notion is that single place where our whole company thinks,
+                writes, and plans. It replaced five other tools for us."
+              </p>
+
+              <div class="num"><h2 style="font-size: 15px">AD</></div>
+
+              <div class="review-id">
+                <h4>Alex Doe</h4>
+                GTM, Open AI
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing" id="pricing">
+        <div class="container">
+          <h2>Pricing</h2>
+
+          <div class="grid">
+            <div class="price-card">
+              <h3>Free</h3>
+              <div class="price-amount">$0</div>
+
+              <ul>
+                <li>✔ Unlimited pages & blocks</li>
+                <li>✔ Basic task tracking</li>
+                <li>✔ Up to 10 guests</li>
+              </ul>
+
+              <a href="#" class="cta-button">Get Started</a>
+            </div>
+
+            <div class="price-card featured">
+              <h3>Plus</h3>
+              <div class="price-amount">$8/mo</div>
+
+              <ul>
+                <li>✔ Everything in Free</li>
+                <li>✔ Unlimited file uploads</li>
+                <li>✔ 2 integrations</li>
+                <li>✔ Notion AI included</li>
+              </ul>
+
+              <a href="#" class="cta-button">Get Started</a>
+            </div>
+
+            <div class="price-card">
+              <h3>Business</h3>
+              <div class="price-amount">$15/mo</div>
+
+              <ul>
+                <li>✔ Everything in Plus</li>
+                <li>✔ Advanced permissions</li>
+                <li>✔ 50+ integrations</li>
+              </ul>
+
+              <a href="#" class="cta-button">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    
+
+    <footer>
+      <div class="container">
+        <h3>Notion</h3>
+
+        <div class="footer-links">
+          <a href="6XXXXXXX54">Contact</a>
+          <a href="hello@notionworkspace.example">Gmail</a>
+          <a href="https://github.com/" target="_blank">GitHub</a>
+          <a href="https://twitter.com/" target="_blank">Twitter</a>
+          <a href="https://instagram.com/" target="_blank">Instagram</a>
+        </div>
+
+        <p>
+          &copy; 2026 Notion, Built for the Week 02 Minor Project.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
