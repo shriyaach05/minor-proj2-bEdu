@@ -6,7 +6,7 @@ It is built using HTML and CSS with Flexbox and CSS Grid. Media queries are used
 - Navbar
 - About
 - Features
-- Benifits
+- Benefits
 - Reviews
 - Pricing
 - Footer
