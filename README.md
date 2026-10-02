@@ -16,3 +16,5 @@ It is built using HTML and CSS with Flexbox and CSS Grid. Media queries are used
 - `index.html` : main page
 - `notionlogo.png` : logo
 - `template1.png`, `template2.png`, `template3.png` : preview images
+
+https://landingpage-minip02.netlify.app/
